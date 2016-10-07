@@ -1,0 +1,8 @@
+c:\users\legacy\documents\visual studio 2015\Projects\Text Bases RPG\Text Bases RPG\bin\Debug\Text Bases RPG.exe.config
+c:\users\legacy\documents\visual studio 2015\Projects\Text Bases RPG\Text Bases RPG\bin\Debug\Text Bases RPG.exe
+c:\users\legacy\documents\visual studio 2015\Projects\Text Bases RPG\Text Bases RPG\bin\Debug\Text Bases RPG.pdb
+c:\users\legacy\documents\visual studio 2015\Projects\Text Bases RPG\Text Bases RPG\obj\Debug\Text Bases RPG.csprojResolveAssemblyReference.cache
+c:\users\legacy\documents\visual studio 2015\Projects\Text Bases RPG\Text Bases RPG\obj\Debug\Text Bases RPG.exe
+c:\users\legacy\documents\visual studio 2015\Projects\Text Bases RPG\Text Bases RPG\obj\Debug\Text Bases RPG.pdb
+C:\Users\Legacy\Documents\Visual Studio 2015\Projects\Text Bases RPG\Text Bases RPG\obj\Debug\Text_Bases_RPG.Properties.Resources.resources
+C:\Users\Legacy\Documents\Visual Studio 2015\Projects\Text Bases RPG\Text Bases RPG\obj\Debug\Text Bases RPG.csproj.GenerateResource.Cache
