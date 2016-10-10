@@ -24,7 +24,7 @@ namespace Text_Bases_RPG
 
         static void Main(string[] args)
         {
-            
+
             //Asking for the user's preference of size.
             Console.WriteLine("Choose your width(Between 100 and 200): ");
             intResol_Wide = Convert.ToInt16(Console.ReadLine());
@@ -42,7 +42,7 @@ namespace Text_Bases_RPG
 
             string input;
 
-            
+
             //Speaks for itself
             Console.WriteLine(@"       ______ __                  ____                  ___    ___                 ____                  __                        __      ");
             Console.WriteLine(@"      /\__  _/\ \                /\  _`\          __  /'___\ /'___\ __            /\  _`\               /\ \__                    /\ \__   ");
@@ -72,36 +72,36 @@ namespace Text_Bases_RPG
             W_Line.ClearCurrentConsoleLine();
 
             //Displaying text.
-            W_Line.WLine(Char_Name + ": Woah what happened...");           
-            W_Line.WLine(Char_Name + " looks to his left and sees the dead Bruxa laying next to him");           
-            W_Line.WLine("It was a tough fight, he sees the blood and sees his own scars");           
-            W_Line.WLine("After laying there for a while, you finally remember, you accepted a contract from a village elder to kill the Bruxa...");            
+            W_Line.WLine(Char_Name + ": Woah what happened...");
+            W_Line.WLine(Char_Name + " looks to his left and sees the dead Bruxa laying next to him");
+            W_Line.WLine("It was a tough fight, he sees the blood and sees his own scars");
+            W_Line.WLine("After laying there for a while, you finally remember, you accepted a contract from a village elder to kill the Bruxa...");
             W_Line.WLine("You don't remember the rest though, try to find out what happened...");
             W_Line.WLine(Char_Name + " sees an apple, some potions and some sort of contract.");
             W_Line.WLine("Do you want to look at the apple, take a potion to regain health or look at the contract?");
 
 
             //Asking to answer the options or any other key.
-               /* do
+            do
+            {
+                RightOption = false;
+                Console.SetCursorPosition(1, WriteScreen);
+                Console.WriteLine("Type: 'Apple', 'Potion' or 'Contract'.");
+                Console.SetCursorPosition(1, TypeScreen);
+                input = Console.ReadLine();
+                W_Line.ClearCurrentConsoleLine();
+                Console.SetCursorPosition(1, WriteScreen);
+                W_Line.ClearCurrentConsoleLine();
+            
+
+            //If the input is 'Potion' you will regain health, if
+            
+            
+                if (input.ToLower() == "potion")
                 {
-                */
-                    Console.SetCursorPosition(1, WriteScreen);
-                    Console.WriteLine("Type: 'Apple', 'Potion' or 'Contract'.");
                     Console.SetCursorPosition(1, TypeScreen);
-                    input = Convert.ToString(Console.ReadLine());
                     W_Line.ClearCurrentConsoleLine();
                     Console.SetCursorPosition(1, WriteScreen);
-                    W_Line.ClearCurrentConsoleLine();
-                 /*   
-                } while (RightOption == false);
-            */
-                //If the input is 'Potion' you will regain health, if
-                if (input.ToLower() == "Potion")
-                {
-                    RightOption = false;
-                    Console.SetCursorPosition(1, TypeScreen);
-                    W_Line.ClearCurrentConsoleLine();
-                    Console.SetCursorPosition(1, TypeScreen);
                     W_Line.WLine("You look at the potion and sip some of it, it tastes like shit but you still take it..");
                     W_Line.ClearCurrentConsoleLine();
                     Char_HP_Current = Char_HP_Current + 80;
@@ -112,33 +112,45 @@ namespace Text_Bases_RPG
                     W_Line.WLineSucces("You took a potion and your health has regenerated to 100.");
                     Console.SetCursorPosition(1, Console.CursorTop - 1);
                     W_Line.ClearCurrentConsoleLine();
-                }
-                else if (input.ToLower() == "Apple")
-                {
-                RightOption = false;
-                Console.SetCursorPosition(1, TypeScreen);
-                W_Line.ClearCurrentConsoleLine();
-                W_Line.WLine("You look at the apple and save it for later.");
-                }
-                else if(input.ToLower() == "Contract")
-                {
-                RightOption = true;
-                Console.SetCursorPosition(1, TypeScreen);
-                W_Line.ClearCurrentConsoleLine();
-                W_Line.WLine("You look at the contract and see it is The Griffin Contract you got from the village elder. ");
-                W_Line.WLineSucces("You remember why you are here again");
+                    RightOption = false;
+                    
                 }
 
+                else if (input.ToLower() == "apple")
+                {
+                    Console.SetCursorPosition(1, TypeScreen);
+                    W_Line.ClearCurrentConsoleLine();
+                    W_Line.WLine("You look at the apple and save it for later.");
+                    RightOption = false;
+                    
+                }
+                else if (input.ToLower() == "contract")
+                {
+                    Console.SetCursorPosition(1, TypeScreen);
+                    W_Line.ClearCurrentConsoleLine();
+                    W_Line.WLine("You look at the contract and see it is The Griffin Contract you got from the village elder. ");
+                    W_Line.WLineSucces("You remember why you are here again");
+                    RightOption = true;
+                    
+                }
+
+            } while (RightOption != true);
+
+        
+               
+             
+                
+
             //Enter to go further in the story.
-            if (RightOption == true)
-            {
+            
+            
                 Console.SetCursorPosition(1, WriteScreen);
                 Console.WriteLine("Press enter to try to get out of this place..");
                 input = Console.ReadLine();
                 Console.SetCursorPosition(1, WriteScreen);
                 W_Line.ClearCurrentConsoleLine();
                 W_Line.WLine("");
-            }
+            
             if (input == "")
             {
                 W_Line.ClearText();
