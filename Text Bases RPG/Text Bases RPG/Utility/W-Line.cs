@@ -59,12 +59,12 @@ namespace Text_Bases_RPG.Utility
             Console.SetCursorPosition(1, Console.CursorTop - 1);
             W_Line.ClearCurrentConsoleLine();
             ReplaceText();
-            
+
         }
         //Method to type a text wich needs an answer
         public static void WLineAnswer(string text)
         {
-            Text.Read(text);   
+            Text.Read(text);
         }
         //Method to remove a line and fix the gui.
         public static void ClearCurrentConsoleLine()
@@ -74,20 +74,20 @@ namespace Text_Bases_RPG.Utility
             Console.SetCursorPosition(1, Console.CursorTop);
             Console.Write(new string(' ', Console.WindowWidth));
             Console.SetCursorPosition(1, currentLineCursor);
-            for (int i = 5; i < Program.intResol_Long -1; i++)
+            for (int i = 5; i < Program.intResol_Long - 1; i++)
             {
                 Console.SetCursorPosition(Program.intResol_Wide - 1, i);
                 Console.Write("|");
                 Console.SetCursorPosition(0, i);
                 Console.Write("|");
             }
-                for (int j = 1; j < Program.intResol_Wide -1; j++)
-                {
-                    Console.SetCursorPosition(j, Program.intResol_Long - 2);
-                    Console.Write("_");
-                }
+            for (int j = 1; j < Program.intResol_Wide - 1; j++)
+            {
+                Console.SetCursorPosition(j, Program.intResol_Long - 2);
+                Console.Write("_");
+            }
 
-            
+
         }
         //Methode om text uit de log te halen
         public static void ReplaceText()
@@ -95,9 +95,9 @@ namespace Text_Bases_RPG.Utility
             Program.busy = true;
             for (int j = 5; j <= Program.intResol_Long - 4; j++)
             {
-                
+
                 Console.SetCursorPosition(1, j);
-                
+
                 if (indexLog >= Program.Log.Count)
                 {
                     indexLog = 0;
@@ -107,7 +107,7 @@ namespace Text_Bases_RPG.Utility
                 {
                     WriteLog();
                     indexLog++;
-                }  
+                }
             }
         }
 
@@ -117,7 +117,7 @@ namespace Text_Bases_RPG.Utility
             Program.busy = true;
             Console.WriteLine(Program.Log[indexLog]);
         }
-        
+
         //Methode om het scherm leeg te maken vanaf een aantal punten.
         public static void ClearText()
         {
@@ -129,16 +129,32 @@ namespace Text_Bases_RPG.Utility
                 Console.Write(new string(' ', Console.WindowWidth));
                 Console.SetCursorPosition(1, currentLineCursor);
             }
-             for( int i = 5; i <= Program.intResol_Long - 2; i++)
-             {
-                    Console.SetCursorPosition(0, i);
-                    Console.Write("|");
-                    Console.SetCursorPosition(Program.intResol_Wide - 1, i);
-                    Console.Write("|");
-                    Console.SetCursorPosition(2, Program.intResol_Long - 4);
-              }
-           }
+            for (int i = 5; i <= Program.intResol_Long - 2; i++)
+            {
+                Console.SetCursorPosition(0, i);
+                Console.Write("|");
+                Console.SetCursorPosition(Program.intResol_Wide - 1, i);
+                Console.Write("|");
+                Console.SetCursorPosition(2, Program.intResol_Long - 4);
+            }
         }
-        
+        public static void Scroll(int Scroll)
+        {
+            ConsoleKeyInfo KeyInfo;
+            KeyInfo = Console.ReadKey(true);
+            switch (KeyInfo.Key)
+            {
+                case ConsoleKey.UpArrow:
+                    for (int i = 5; i < Program.intResol_Long - 7; i++)
+                    {
+                        Console.SetCursorPosition(1, i);
+
+                    }
+                    break;
+
+            }
+
+        }
     }
+}
 

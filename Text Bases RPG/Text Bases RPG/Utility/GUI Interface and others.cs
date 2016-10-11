@@ -15,6 +15,7 @@ namespace Text_Bases_RPG.Utility
         public static Double dblExp;
         public static Double dblHealth;
         public static Double dblLevel;
+        public static int WriteLines;
 
         //Method to print the GUI and stats.
         public static void ShowGui(string Gui)
@@ -100,7 +101,12 @@ namespace Text_Bases_RPG.Utility
                 }
             }
         }
+        
+        
 
-    }
- }
+     }
+}
+
+  
+ 
 

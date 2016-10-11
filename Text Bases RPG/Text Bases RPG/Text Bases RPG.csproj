@@ -50,7 +50,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Utility\Database.cs" />
     <Compile Include="Utility\GUI Interface and others.cs" />
+    <Compile Include="Utility\Player.cs" />
     <Compile Include="Utility\Text.cs" />
     <Compile Include="Utility\W-Line.cs" />
   </ItemGroup>

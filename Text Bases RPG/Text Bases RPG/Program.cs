@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleApplication1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Text_Bases_RPG.Utility;
@@ -24,12 +25,12 @@ namespace Text_Bases_RPG
 
         static void Main(string[] args)
         {
-
+            
             //Asking for the user's preference of size.
             Console.WriteLine("Choose your width(Between 100 and 200): ");
             intResol_Wide = Convert.ToInt16(Console.ReadLine());
 
-            Console.WriteLine("Choose your lenght(Between 30 and 70): ");
+            Console.WriteLine("Choose your lenght(Between 40 and 50): ");
             intResol_Long = Convert.ToInt16(Console.ReadLine());
 
             Console.Clear();
@@ -53,12 +54,38 @@ namespace Text_Bases_RPG
             Console.WriteLine(@"            \/_/ \/_/\/_/\/____/     \/___/  \/_/   \/_/\/_/   \/_/   \/_/\/_/\/_/    \/___/ \/___/ \/_/\/_/\/__/\/_/\/__/\/_/\/____/ \/__/");
 
 
-            //Asking Name
-            Console.SetCursorPosition(40, 20);
-            Console.Write("What is the name of this amazing adventurer? ");
-            Char_Name = Convert.ToString(Console.ReadLine());
+            //logging in.
+            login:
+            Text.Read("What is your username?");
+            string username = Console.ReadLine();
+            Player Player = new Player(username);
+            if (Player.User != null)
+            {
+                Text.Read("Welcome, " + Player.Username() + ". Your current hp is: " + Player.currenthp() +
+                          ". Your account has been made on: " + Player.Created());
 
+                Console.Clear();
+            }
+            else
+            {
+            register:
+                Text.Read("-------------------");
+                Text.Read("Do you want to make user " + username + " ? Press ENTER");
+                Console.ReadLine();
+                Player newPlayer = new Player(username, true);
+
+                goto login;
+            }
+    
             Console.Clear();
+
+            Char_EXP_Current = Convert.ToInt16(Player.currentxp());
+            Char_EXP_Full = Convert.ToInt16(Player.Xp());
+
+            Char_HP_Current = Convert.ToInt16(Player.currenthp());
+            Char_HP_Full = Convert.ToInt16(Player.Hp());
+
+            Char_Name = Player.Username();
 
             //Interface weergeven:
             GUI_Interface.ShowGui("Gui");
@@ -104,7 +131,7 @@ namespace Text_Bases_RPG
                     Console.SetCursorPosition(1, WriteScreen);
                     W_Line.WLine("You look at the potion and sip some of it, it tastes like shit but you still take it..");
                     W_Line.ClearCurrentConsoleLine();
-                    Char_HP_Current = Char_HP_Current + 80;
+                    Char_HP_Current = Char_HP_Full;
                     Console.SetCursorPosition(Convert.ToInt16(GUI_Interface.dblHealth), 2);
                     Console.WriteLine("HP: {0}/{1}", Char_HP_Current, Char_HP_Full);
                     Console.SetCursorPosition(1, WriteScreen);
@@ -133,6 +160,12 @@ namespace Text_Bases_RPG
                     RightOption = true;
                     
                 }
+                else
+                {
+                    Console.SetCursorPosition(1, TypeScreen);
+                    W_Line.ClearCurrentConsoleLine();
+                    RightOption = false;
+                }
 
             } while (RightOption != true);
 
@@ -150,12 +183,7 @@ namespace Text_Bases_RPG
                 Console.SetCursorPosition(1, WriteScreen);
                 W_Line.ClearCurrentConsoleLine();
                 W_Line.WLine("");
-            
-            if (input == "")
-            {
-                W_Line.ClearText();
-            }
-            
+
             W_Line.WLine("You stand up and lean on the Bruxa you killed and you are trying to remember some more of what happened...");
             W_Line.WLine("You are remembering that you accepted the contract from the village elder, who told you that there was a Royal Arch Griffin nest on top of");
             W_Line.WLine("the mountain, but you needed to go trough a dungeon to get to the top of the mountain...");

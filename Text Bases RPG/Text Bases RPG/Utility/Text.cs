@@ -9,7 +9,7 @@ namespace Text_Bases_RPG.Utility
 {
     class Text
     {
-        public static int textSpeed = 10;
+        public static int textSpeed = 15;
 
         public static void Read(string text)
         {
