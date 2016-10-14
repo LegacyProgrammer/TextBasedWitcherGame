@@ -13,7 +13,7 @@ namespace ConsoleApplication1
     class Player
     {
         public SqlDataReader User;
-        private readonly string[] _userData = new string[8];
+        private readonly string[] _userData = new string[7];
 
         public Player(string username, bool create = false)
         {
@@ -43,8 +43,7 @@ namespace ConsoleApplication1
                             _userData[3] = User["current_xp"].ToString();
                             _userData[4] = User["current_hp"].ToString();
                             _userData[5] = User["stamina"].ToString();
-                            _userData[6] = User["created"].ToString();
-                            _userData[7] = User["id"].ToString();
+                            _userData[6] = User["id"].ToString();
                         }
 
                         User.Close();
@@ -58,7 +57,7 @@ namespace ConsoleApplication1
                 else
                 {
                     Database.Connect();
-                    SqlDataReader newUser = Database.Query("INSERT INTO Players (hp, xp, current_xp, current_hp, stamina, name, created) VALUES(100, 1000, 550, 20, 100, '"+ Database.RemoveSpecialCharacters(username) +"', '"+ DateTime.Now +"')");
+                    SqlDataReader newUser = Database.Query("INSERT INTO Players (hp, xp, current_xp, current_hp, stamina, name) VALUES(100, 1000, 550, 20, 100, '"+ Database.RemoveSpecialCharacters(username) + "')");
                     if (newUser.RecordsAffected < 1)
                     {
                         Text.Error("Er ging iets fout tijdens het invoeren van je gegevens.");
@@ -104,10 +103,6 @@ namespace ConsoleApplication1
             return _userData[5];
         }
 
-        public string Created()
-        {
-            return _userData[6];
-        }
 
         public bool Update(string what, int amount)
         {

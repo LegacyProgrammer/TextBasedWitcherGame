@@ -54,29 +54,29 @@ namespace Text_Bases_RPG
             Console.WriteLine(@"            \/_/ \/_/\/_/\/____/     \/___/  \/_/   \/_/\/_/   \/_/   \/_/\/_/\/_/    \/___/ \/___/ \/_/\/_/\/__/\/_/\/__/\/_/\/____/ \/__/");
 
 
-            //logging in.
+        //logging in.
+
             login:
             Text.Read("What is your username?");
             string username = Console.ReadLine();
             Player Player = new Player(username);
             if (Player.User != null)
             {
-                Text.Read("Welcome, " + Player.Username() + ". Your current hp is: " + Player.currenthp() +
-                          ". Your account has been made on: " + Player.Created());
+                Text.Read("Welcome, " + Player.Username() + ". Your current hp is: " + Player.currenthp());
 
                 Console.Clear();
             }
             else
             {
-            register:
+            
                 Text.Read("-------------------");
                 Text.Read("Do you want to make user " + username + " ? Press ENTER");
                 Console.ReadLine();
                 Player newPlayer = new Player(username, true);
 
                 goto login;
-            }
-    
+       }
+
             Console.Clear();
 
             Char_EXP_Current = Convert.ToInt16(Player.currentxp());
@@ -97,6 +97,7 @@ namespace Text_Bases_RPG
             Console.ReadLine();
             Console.SetCursorPosition(1, Console.CursorTop - 2);
             W_Line.ClearCurrentConsoleLine();
+
 
             //Displaying text.
             W_Line.WLine(Char_Name + ": Woah what happened...");
@@ -169,11 +170,6 @@ namespace Text_Bases_RPG
 
             } while (RightOption != true);
 
-        
-               
-             
-                
-
             //Enter to go further in the story.
             
             
@@ -192,7 +188,8 @@ namespace Text_Bases_RPG
             W_Line.WLine("The only way to get to the top was trough a cave behind the bruxa itself... So you needed to fight it...");
             W_Line.WLine("While fighting it, you barely killed him but afterwards you fell uncunsious and woke up hours or even days later next to the Bruxa.");
 
-
+           
+            
 
             Console.ReadLine();
 

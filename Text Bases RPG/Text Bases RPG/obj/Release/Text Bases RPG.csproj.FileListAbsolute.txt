@@ -1,0 +1,7 @@
+C:\Users\Legacy\documents\visual studio 2015\Projects\Text Bases RPG\Text Bases RPG\bin\Release\Text Bases RPG.exe.config
+C:\Users\Legacy\documents\visual studio 2015\Projects\Text Bases RPG\Text Bases RPG\bin\Release\Text Bases RPG.exe
+C:\Users\Legacy\documents\visual studio 2015\Projects\Text Bases RPG\Text Bases RPG\bin\Release\Text Bases RPG.pdb
+C:\Users\Legacy\documents\visual studio 2015\Projects\Text Bases RPG\Text Bases RPG\obj\Release\Text_Bases_RPG.Properties.Resources.resources
+C:\Users\Legacy\documents\visual studio 2015\Projects\Text Bases RPG\Text Bases RPG\obj\Release\Text Bases RPG.csproj.GenerateResource.Cache
+C:\Users\Legacy\documents\visual studio 2015\Projects\Text Bases RPG\Text Bases RPG\obj\Release\Text Bases RPG.exe
+C:\Users\Legacy\documents\visual studio 2015\Projects\Text Bases RPG\Text Bases RPG\obj\Release\Text Bases RPG.pdb

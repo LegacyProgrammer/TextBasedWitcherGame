@@ -9,14 +9,16 @@ namespace Text_Bases_RPG.Utility
 {
     class Text
     {
-        public static int textSpeed = 15;
+        public static int textSpeed = 50;
 
         public static void Read(string text)
         {
             for (int i = 0; i < text.Length; i++)
             {
                 Console.Write(text[i]);
+#if !DEBUG
                 Thread.Sleep(textSpeed);
+#endif
             }
             Console.WriteLine("");
         }

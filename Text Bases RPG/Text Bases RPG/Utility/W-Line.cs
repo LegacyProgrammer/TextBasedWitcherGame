@@ -10,7 +10,10 @@ namespace Text_Bases_RPG.Utility
     class W_Line
     {
         //Variabels.
-        private static int indexLog = 0;
+        public static int indexLog = 0;
+        public static int MaxLinePrintAantal = Program.intResol_Long - 12;
+
+
 
         //Method to place text and saves it in the log.
         public static void WLine(string text)
@@ -93,6 +96,7 @@ namespace Text_Bases_RPG.Utility
         public static void ReplaceText()
         {
             Program.busy = true;
+
             for (int j = 5; j <= Program.intResol_Long - 4; j++)
             {
 
@@ -100,6 +104,7 @@ namespace Text_Bases_RPG.Utility
 
                 if (indexLog >= Program.Log.Count)
                 {
+                    j = 5;
                     indexLog = 0;
                     break;
                 }
@@ -112,7 +117,7 @@ namespace Text_Bases_RPG.Utility
         }
 
         //Methode om de log in de console te weergeven
-        private static void WriteLog()
+        public static void WriteLog()
         {
             Program.busy = true;
             Console.WriteLine(Program.Log[indexLog]);
@@ -138,23 +143,7 @@ namespace Text_Bases_RPG.Utility
                 Console.SetCursorPosition(2, Program.intResol_Long - 4);
             }
         }
-        public static void Scroll(int Scroll)
-        {
-            ConsoleKeyInfo KeyInfo;
-            KeyInfo = Console.ReadKey(true);
-            switch (KeyInfo.Key)
-            {
-                case ConsoleKey.UpArrow:
-                    for (int i = 5; i < Program.intResol_Long - 7; i++)
-                    {
-                        Console.SetCursorPosition(1, i);
+      }
+   }
 
-                    }
-                    break;
-
-            }
-
-        }
-    }
-}
 
