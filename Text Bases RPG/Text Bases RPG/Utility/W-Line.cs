@@ -12,6 +12,7 @@ namespace Text_Bases_RPG.Utility
         //Variabels.
         public static int indexLog = 0;
         public static int MaxLinePrintAantal = Program.intResol_Long - 12;
+        public static int CurrentLine;
 
 
 
@@ -25,6 +26,7 @@ namespace Text_Bases_RPG.Utility
             Console.SetCursorPosition(1, Console.CursorTop - 1);
             W_Line.ClearCurrentConsoleLine();
             ReplaceText();
+            Program.busy = false;
 
         }
         //Method to place text(enemy) and saves it in the log.
@@ -37,6 +39,7 @@ namespace Text_Bases_RPG.Utility
             Console.SetCursorPosition(1, Console.CursorTop - 1);
             W_Line.ClearCurrentConsoleLine();
             ReplaceText();
+            Program.busy = false;
 
 
         }
@@ -50,6 +53,7 @@ namespace Text_Bases_RPG.Utility
             Console.SetCursorPosition(1, Console.CursorTop - 1);
             W_Line.ClearCurrentConsoleLine();
             ReplaceText();
+            Program.busy = false;
 
         }
         //Method to place text(Success) and saves the line in the log
@@ -62,7 +66,7 @@ namespace Text_Bases_RPG.Utility
             Console.SetCursorPosition(1, Console.CursorTop - 1);
             W_Line.ClearCurrentConsoleLine();
             ReplaceText();
-
+            Program.busy = false;
         }
         //Method to type a text wich needs an answer
         public static void WLineAnswer(string text)
@@ -101,6 +105,11 @@ namespace Text_Bases_RPG.Utility
             {
 
                 Console.SetCursorPosition(1, j);
+                CurrentLine++;
+                if (CurrentLine == Program.intResol_Long - 7)
+                {
+                    CurrentLine = 5;
+                }
 
                 if (indexLog >= Program.Log.Count)
                 {
@@ -143,7 +152,48 @@ namespace Text_Bases_RPG.Utility
                 Console.SetCursorPosition(2, Program.intResol_Long - 4);
             }
         }
-      }
-   }
+        /*
+        public static void ScrollUpAndDown()
+        {
+            if (Program.busy != true)
+            {
+                ConsoleKeyInfo KeyInfo;
+                KeyInfo = Console.ReadKey(true);
+                switch (KeyInfo.Key)
+                {
+                    case ConsoleKey.W:
+                        CurrentLine--;
+                        indexLog--;
+                        if(indexLog >= Program.Log.Count)
+                        if(CurrentLine == 5)
+                        {
+                            ClearText();
+                            CurrentLine = Program.intResol_Long - 7;
+                        }
+                        Console.SetCursorPosition(1, CurrentLine);
+                        Program.busy = true;
+                        Console.WriteLine(Program.Log[indexLog]);
+                        break;
+
+
+                    case ConsoleKey.S:
+                        Program.busy = true;
+                        CurrentLine++;
+                        indexLog++;
+                        if (CurrentLine == Program.intResol_Long - 7)
+                        {
+                            ClearText();
+                            CurrentLine = 5;
+                        }
+                        Console.SetCursorPosition(1, CurrentLine); 
+                        Console.WriteLine(Program.Log[indexLog]);
+                        break;
+                }
+            }*/
+
+
+        }
+     }
+   
 
 
