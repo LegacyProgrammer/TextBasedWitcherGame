@@ -11,7 +11,7 @@ namespace ConsoleApplication1
 {
     static class Database
     {
-        private static string server = @".\SQLEXPRESS";
+        private static string server = @"MSI\SQLEXPRESS";
         private static string database = "TheGriffinContract";
         private static SqlConnection _connection;
 
